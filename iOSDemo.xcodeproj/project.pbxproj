@@ -54,6 +54,7 @@
 		1866E253286C160200335C9D /* iOSDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1866E271286C5FE200335C9D /* View */,
 				1866E254286C160200335C9D /* AppDelegate.swift */,
 				1866E256286C160200335C9D /* SceneDelegate.swift */,
 				1866E258286C160200335C9D /* ViewController.swift */,
@@ -62,6 +63,13 @@
 				1866E262286C160C00335C9D /* Info.plist */,
 			);
 			path = iOSDemo;
+			sourceTree = "<group>";
+		};
+		1866E271286C5FE200335C9D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
