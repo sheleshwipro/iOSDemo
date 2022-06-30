@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1843EAB5286D91C3005D410B /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 1843EAB4286D91C3005D410B /* data.json */; };
 		1866E255286C160200335C9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866E254286C160200335C9D /* AppDelegate.swift */; };
 		1866E257286C160200335C9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866E256286C160200335C9D /* SceneDelegate.swift */; };
 		1866E259286C160200335C9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866E258286C160200335C9D /* ViewController.swift */; };
 		1866E25E286C160C00335C9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1866E25D286C160C00335C9D /* Assets.xcassets */; };
 		1866E261286C160C00335C9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1866E25F286C160C00335C9D /* LaunchScreen.storyboard */; };
+		1866E275286C765200335C9D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866E274286C765200335C9D /* NetworkManager.swift */; };
+		1866E278286CA75C00335C9D /* FactListViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866E277286CA75C00335C9D /* FactListViewService.swift */; };
+		1866E27D286CAC7E00335C9D /* FactListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866E27C286CAC7E00335C9D /* FactListModel.swift */; };
+		1866E280286CAC9A00335C9D /* FactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866E27F286CAC9A00335C9D /* FactModel.swift */; };
+		1866E283286CACE500335C9D /* FactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866E282286CACE500335C9D /* FactListViewModel.swift */; };
+		1866E286286CACFE00335C9D /* FactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866E285286CACFE00335C9D /* FactViewModel.swift */; };
+		1866E289286CAF2300335C9D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866E288286CAF2300335C9D /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1843EAB4286D91C3005D410B /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		1866E251286C160200335C9D /* iOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1866E254286C160200335C9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1866E256286C160200335C9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +31,13 @@
 		1866E25D286C160C00335C9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1866E260286C160C00335C9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1866E262286C160C00335C9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1866E274286C765200335C9D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1866E277286CA75C00335C9D /* FactListViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactListViewService.swift; sourceTree = "<group>"; };
+		1866E27C286CAC7E00335C9D /* FactListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactListModel.swift; sourceTree = "<group>"; };
+		1866E27F286CAC9A00335C9D /* FactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactModel.swift; sourceTree = "<group>"; };
+		1866E282286CACE500335C9D /* FactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactListViewModel.swift; sourceTree = "<group>"; };
+		1866E285286CACFE00335C9D /* FactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewModel.swift; sourceTree = "<group>"; };
+		1866E288286CAF2300335C9D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1843EAB3286D9167005D410B /* DATA */ = {
+			isa = PBXGroup;
+			children = (
+				1843EAB4286D91C3005D410B /* data.json */,
+			);
+			path = DATA;
+			sourceTree = "<group>";
+		};
 		1866E248286C160200335C9D = {
 			isa = PBXGroup;
 			children = (
@@ -54,10 +78,15 @@
 		1866E253286C160200335C9D /* iOSDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1843EAB3286D9167005D410B /* DATA */,
+				1866E27B286CAC5300335C9D /* Model */,
+				1866E27A286CABFE00335C9D /* ViewModel */,
+				1866E273286C763200335C9D /* Utility */,
 				1866E271286C5FE200335C9D /* View */,
 				1866E254286C160200335C9D /* AppDelegate.swift */,
 				1866E256286C160200335C9D /* SceneDelegate.swift */,
 				1866E258286C160200335C9D /* ViewController.swift */,
+				1866E277286CA75C00335C9D /* FactListViewService.swift */,
 				1866E25D286C160C00335C9D /* Assets.xcassets */,
 				1866E25F286C160C00335C9D /* LaunchScreen.storyboard */,
 				1866E262286C160C00335C9D /* Info.plist */,
@@ -70,6 +99,33 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1866E273286C763200335C9D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				1866E274286C765200335C9D /* NetworkManager.swift */,
+				1866E288286CAF2300335C9D /* Observable.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		1866E27A286CABFE00335C9D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1866E282286CACE500335C9D /* FactListViewModel.swift */,
+				1866E285286CACFE00335C9D /* FactViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1866E27B286CAC5300335C9D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1866E27C286CAC7E00335C9D /* FactListModel.swift */,
+				1866E27F286CAC9A00335C9D /* FactModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1866E261286C160C00335C9D /* LaunchScreen.storyboard in Resources */,
+				1843EAB5286D91C3005D410B /* data.json in Resources */,
 				1866E25E286C160C00335C9D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,9 +198,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1866E283286CACE500335C9D /* FactListViewModel.swift in Sources */,
+				1866E275286C765200335C9D /* NetworkManager.swift in Sources */,
+				1866E278286CA75C00335C9D /* FactListViewService.swift in Sources */,
+				1866E280286CAC9A00335C9D /* FactModel.swift in Sources */,
 				1866E259286C160200335C9D /* ViewController.swift in Sources */,
 				1866E255286C160200335C9D /* AppDelegate.swift in Sources */,
+				1866E289286CAF2300335C9D /* Observable.swift in Sources */,
+				1866E286286CACFE00335C9D /* FactViewModel.swift in Sources */,
 				1866E257286C160200335C9D /* SceneDelegate.swift in Sources */,
+				1866E27D286CAC7E00335C9D /* FactListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

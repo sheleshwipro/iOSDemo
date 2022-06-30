@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     private var tableview:UITableView?
+    private var viewModel = FactListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +17,15 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         
         configureUI()
+        viewModel.factList.bind { (factListModel) in
+            DispatchQueue.main.async {
+                self.navigationItem.title = factListModel.title
+                self.tableview?.reloadData()
+            }
+        }
+        viewModel.fetchFactList { (result) in
+            
+        }
     }
     
     
@@ -33,28 +43,32 @@ class ViewController: UIViewController {
         tblView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         tblView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         tblView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
+        self.tableview = tblView
     }
 
 
 }
 extension ViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        let c = viewModel.factList.value.rows.count
+        return c
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let factModel = viewModel.factList.value.rows[indexPath.row]
+        
         if let cell = tableview?.dequeueReusableCell(withIdentifier: "CellIdentifier")
         {
-            cell.textLabel?.text = "\(indexPath.row)"
-            cell.detailTextLabel?.text = "test test test"
+            cell.detailTextLabel?.numberOfLines = 0
+            cell.textLabel?.text = factModel.title
+            cell.detailTextLabel?.text = factModel.rowDescription
             cell.imageView?.image = UIImage(named: "flag_of_canada")
             return cell
         }else {
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "CellIdentifier")
-            cell.textLabel?.text = "\(indexPath.row)"
-            cell.detailTextLabel?.text = "test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test."
-            cell.detailTextLabel?.numberOfLines = 0
+            cell.detailTextLabel?.numberOfLines = 0            
+            cell.textLabel?.text = factModel.title
+            cell.detailTextLabel?.text = factModel.rowDescription
             cell.imageView?.image = UIImage(named: "flag_of_canada")
             return cell
         }
