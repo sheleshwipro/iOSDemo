@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         tblView.delegate = self
         tblView.dataSource = self
         tblView.rowHeight = UITableView.automaticDimension
-        tblView.estimatedRowHeight = 1000
+        tblView.estimatedRowHeight = 100
         
         view.addSubview(tblView)
         tblView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,30 +58,30 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let factModel = viewModel.factList.value.rows[indexPath.row]
         
-        if let cell = tableview?.dequeueReusableCell(withIdentifier: "CellIdentifier")
+        if let cell = tableview?.dequeueReusableCell(withIdentifier: "CellIdentifier") as? FactViewCell
         {
-            cell.detailTextLabel?.numberOfLines = 0
-            cell.textLabel?.text = factModel.title
-            cell.detailTextLabel?.text = factModel.rowDescription
+            cell.lblDescription.numberOfLines = 0
+            cell.lblTitle.text = factModel.title ?? "__"
+            cell.lblDescription.text = factModel.rowDescription ?? "__"
 
             if let url = URL(string: factModel.imageHref ?? "") {
-                cell.imageView?.sd_setImage(with: url, placeholderImage: UIImage(named: "image_loading"))
+                cell.imgView.sd_setImage(with: url, placeholderImage: UIImage(named: "image_loading"))
             }else{
-                cell.imageView?.image = UIImage(named: "no_image")
+                cell.imgView.image = UIImage(named: "no_image")
             }
             
 
             return cell
         }else {
-            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "CellIdentifier")
-            cell.detailTextLabel?.numberOfLines = 0            
-            cell.textLabel?.text = factModel.title
-            cell.detailTextLabel?.text = factModel.rowDescription
+            let cell = FactViewCell(style: .default, reuseIdentifier: "CellIdentifier") as FactViewCell
+            cell.lblTitle.numberOfLines = 0
+            cell.lblTitle.text = factModel.title
+            cell.lblDescription.text = factModel.rowDescription
             
             if let url = URL(string: factModel.imageHref ?? "") {
-                cell.imageView?.sd_setImage(with: url, placeholderImage: UIImage(named: "image_loading"))
+                cell.imgView.sd_setImage(with: url, placeholderImage: UIImage(named: "image_loading"))
             }else{
-                cell.imageView?.image = UIImage(named: "no_image")
+                cell.imgView.image = UIImage(named: "no_image")
             }
             
             return cell

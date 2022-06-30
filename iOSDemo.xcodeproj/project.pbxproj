@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1843EAB5286D91C3005D410B /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 1843EAB4286D91C3005D410B /* data.json */; };
+		1843EAC4286DB7A2005D410B /* FactViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1843EAC3286DB7A2005D410B /* FactViewCell.swift */; };
 		1866E255286C160200335C9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866E254286C160200335C9D /* AppDelegate.swift */; };
 		1866E257286C160200335C9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866E256286C160200335C9D /* SceneDelegate.swift */; };
 		1866E259286C160200335C9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866E258286C160200335C9D /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		1843EAB4286D91C3005D410B /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		1843EAC3286DB7A2005D410B /* FactViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewCell.swift; sourceTree = "<group>"; };
 		1866E251286C160200335C9D /* iOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1866E254286C160200335C9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1866E256286C160200335C9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		1866E271286C5FE200335C9D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1843EAC3286DB7A2005D410B /* FactViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				1866E259286C160200335C9D /* ViewController.swift in Sources */,
 				1866E255286C160200335C9D /* AppDelegate.swift in Sources */,
 				1866E289286CAF2300335C9D /* Observable.swift in Sources */,
+				1843EAC4286DB7A2005D410B /* FactViewCell.swift in Sources */,
 				1866E286286CACFE00335C9D /* FactViewModel.swift in Sources */,
 				1866E257286C160200335C9D /* SceneDelegate.swift in Sources */,
 				1866E27D286CAC7E00335C9D /* FactListModel.swift in Sources */,
