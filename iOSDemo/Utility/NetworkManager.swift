@@ -70,13 +70,16 @@ class APIHandler:APIHandlerDelegate{
 }
 class ResponseHandler:ResponseHandlerDelegate{
     func fetchModel<T:Codable>(data:Data,type:T.Type, completion:(Result<T, MyError>)->Void){
-        //let path = FileManager.default.urls(for: .documentDirectory,                                            in: .userDomainMask)[0].appendingPathComponent("myFile")
-        //try? data.write(to: path)
-       
+
+        #error("Below commented code is not able to decode the received data from the server so i had to add json data in local data.json file and displaying on to UI. Please comment out this error and code will run")
+//        if let model = try? JSONDecoder().decode(type.self, from: data){
+//            completion(.success(model))
+//        }else{
+//            completion(.failure(.DecodingError))
+//        }
+
         if let path = Bundle.main.path(forResource: "data", ofType: "json"){
             do {
-
-                
                 let contents = try String(contentsOfFile: path)
                 let d2 = Data(contents.utf8)
                 do {
@@ -98,14 +101,6 @@ class ResponseHandler:ResponseHandlerDelegate{
             // example.txt not found!
             print("invalid path")
         }
-        
-        
-//        if let model = try? JSONDecoder().decode(type.self, from: data){
-//            completion(.success(model))
-//        }else{
-//            completion(.failure(.DecodingError))
-//        }
-        
-       
+ 
     }
 }
