@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ViewController: UIViewController {
     private var tableview:UITableView?
@@ -62,14 +63,27 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
             cell.detailTextLabel?.numberOfLines = 0
             cell.textLabel?.text = factModel.title
             cell.detailTextLabel?.text = factModel.rowDescription
-            cell.imageView?.image = UIImage(named: "flag_of_canada")
+
+            if let url = URL(string: factModel.imageHref ?? "") {
+                cell.imageView?.sd_setImage(with: url, placeholderImage: UIImage(named: "image_loading"))
+            }else{
+                cell.imageView?.image = UIImage(named: "no_image")
+            }
+            
+
             return cell
         }else {
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "CellIdentifier")
             cell.detailTextLabel?.numberOfLines = 0            
             cell.textLabel?.text = factModel.title
             cell.detailTextLabel?.text = factModel.rowDescription
-            cell.imageView?.image = UIImage(named: "flag_of_canada")
+            
+            if let url = URL(string: factModel.imageHref ?? "") {
+                cell.imageView?.sd_setImage(with: url, placeholderImage: UIImage(named: "image_loading"))
+            }else{
+                cell.imageView?.image = UIImage(named: "no_image")
+            }
+            
             return cell
         }
     }
